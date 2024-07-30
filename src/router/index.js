@@ -1,7 +1,9 @@
 import HomePage from '@/views/HomePage.vue';
 import NotFound from '@/views/NotFound.vue';
-import { createRouter , createWebHistory } from 'vue-router';
+import ContactForm from '@/components/ContactForm.vue';
 
+
+import { createRouter , createWebHistory } from 'vue-router';
 
 
 const routes = [
@@ -11,8 +13,13 @@ const routes = [
         component : HomePage
     },
     {
+        path: '/ContactForm',
+        name : "ContactForm",
+        component : ContactForm
+    },
+    {
         path : '/:pathmatch(.*)*', component: NotFound
-    }
+    },
 ]
 
 const router = createRouter({
