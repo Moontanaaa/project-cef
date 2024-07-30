@@ -9,9 +9,9 @@
         <span>|</span>
         <router-link class="link" to="/">Acceuil</router-link>
         <span>|</span>
-        <router-link class="link" to=/ >Projets</router-link>
+        <router-link class="link" to="/FileProject">Projets</router-link>
         <span>|</span>
-        <router-link class="link" to="/ContactForm" >Me Contacter</router-link>
+        <router-link class="link" to="/contactform">Me Contacter</router-link>
       </div>
     </nav>
 
@@ -32,16 +32,14 @@
     export default {
 
       name : "app",
-      name: 'Menu',
+      // date du jour en temps reel
       data() {
       return {
         currentYear: new Date().getFullYear(),
         currentDate: new Date().toLocaleDateString('fr-FR', {
         weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
         }),
-      };
-    },
-    }
+      }}}
     
 </script>
 
@@ -86,12 +84,6 @@
     color: white
   }
 
-  @media (max-width: 600px) {
-    .footer {
-      flex-direction: column;
-      padding: 10px;
-    }
-  }
   hr{
     width: auto;
     height: 2px;

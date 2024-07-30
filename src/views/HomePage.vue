@@ -1,11 +1,11 @@
 <template>
     <div>
-            <home></home>
-            <DownloadCv></DownloadCv>
-            <Presentation></Presentation>    
-            <graphskill></graphskill>
-            <FileProjects></FileProjects>
-            <ContactForm></ContactForm>
+                <home></home>
+                <DownloadCv></DownloadCv>
+                <Presentation></Presentation> 
+                <graphskill></graphskill>
+                <FileProjects></FileProjects>
+                <ContactForm></ContactForm>
     </div>
 </template>
 
