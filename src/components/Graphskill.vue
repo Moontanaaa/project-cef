@@ -45,6 +45,7 @@
           { name: 'django', level: 15 },
           { name: 'Node.js', level: 50 },
           { name: 'Express.js', level: 10 },
+          { name: 'Emailjs', level: 70 },
           { name: 'GitHub', level: 90 },
         ]
       };
