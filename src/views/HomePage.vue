@@ -11,7 +11,7 @@
 
 <script>
     import ContactForm from '@/components/ContactForm.vue';
-import DownloadCv from '@/components/DownloadCv.vue';
+    import DownloadCv from '@/components/DownloadCv.vue';
     import FileProjects from '@/components/FileProjects.vue';
     import graphskill from '@/components/Graphskill.vue';
     import Home from '@/components/Home.vue';
