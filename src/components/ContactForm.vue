@@ -8,7 +8,7 @@
       <div id="map"></div>
     </div>
     <div class="contact-form">
-      <form @submit.prevent="submitForm">
+      <form @submit.prevent="sendEmail">
         <div class="form-group">
           <label for="name">Nom</label>
           <input type="text" id="name" v-model="form.name" required />
@@ -23,28 +23,48 @@
         </div>
         <button type="submit">Envoyer</button>
       </form>
+      <p v-if="statusMessage">{{ statusMessage }}</p>
     </div>
   </div>
 </template>
 
 <script>
+import emailjs from 'emailjs-com';
+
 export default {
-  name: 'ContactForm',
+  name : "ContacForm",
   data() {
     return {
       form: {
         name: '',
         email: '',
         message: ''
-      }
+      },
+      statusMessage: ''
     };
   },
   mounted() {
     this.initMap();
   },
   methods: {
-    submitForm() {
-      alert(`Nom: ${this.form.name}\nEmail: ${this.form.email}\nMessage: ${this.form.message}`);
+    sendEmail() {
+      const serviceID = 'service_lk7d4xq';
+      const templateID = 'template_83vejav';
+      const userID = 'montanafabio';
+
+      emailjs.send(serviceID, templateID, this.form, userID)
+        .then(response => {
+          this.statusMessage = 'E-mail envoyé avec succès !';
+          this.clearForm();
+        })
+        .catch(error => {
+          this.statusMessage = 'Erreur lors de l\'envoi de l\'e-mail : ' + error.text;
+        });
+    },
+    clearForm() {
+      this.form.name = '';
+      this.form.email = '';
+      this.form.message = '';
     },
     initMap() {
       const location = { lat: 46.100000, lng: 5.816667 }; 
